@@ -2,7 +2,7 @@
 
 ローカル環境で vLLM の OpenAI 互換サーバーを起動し、Python からチャット補完 API を呼び出すための最小構成プロジェクトです。
 
-デフォルトでは `nvidia/Qwen3.6-27B-NVFP4` を vLLM で配信し、`main.py` から `http://localhost:8000/v1` にリクエストします。
+デフォルトでは `nvidia/Qwen3.6-27B-NVFP4` を vLLM で起動し、`main.py` から `http://localhost:8000/v1` にリクエストします。
 
 ## 構成
 
