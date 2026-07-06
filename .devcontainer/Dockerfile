@@ -18,3 +18,8 @@ ENV UV_LINK_MODE=copy
 
 # pip management tools
 RUN pip3 install --upgrade pip packaging
+RUN uv pip install vllm \
+    --extra-index-url https://wheels.vllm.ai/0.24.0/cu129 \
+    --extra-index-url https://download.pytorch.org/whl/cu129 \
+    --index-strategy unsafe-best-match
+    
