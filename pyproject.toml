@@ -3,6 +3,27 @@ name = "localllm-server"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.10,<3.11"
 dependencies = [
+    "vllm>=0.24.0",
 ]
+
+[tool.uv]
+index-strategy = "unsafe-best-match"
+environments = [
+  "sys_platform == 'linux' and platform_machine == 'x86_64'",
+  "sys_platform == 'linux' and platform_machine == 'aarch64'",
+]
+
+[[tool.uv.index]]
+name = "vllm-cu129"
+url = "https://wheels.vllm.ai/0.24.0/cu129"
+
+[[tool.uv.index]]
+name = "pytorch-cu129"
+url = "https://download.pytorch.org/whl/cu129"
+
+[[tool.uv.index]]
+name = "pypi"
+url = "https://pypi.org/simple"
+default = true
